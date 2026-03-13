@@ -143,8 +143,11 @@ const WeatherCard = () => {
 
         {/* feel section */}
         <div className="grid gap-5 grid-cols-2 md:grid-cols-4 mt-5 ">
-          {feelSection.map((feel) => (
-            <div className="bg-(--neutral-700) shadow rounded-xl px-6 py-2 text-gray-300 border-gray-700 border">
+          {feelSection.map((feel, index) => (
+            <div
+              className="bg-(--neutral-700) shadow rounded-xl px-6 py-2 text-gray-300 border-gray-700 border"
+              key={index}
+            >
               <p className="py-3">{feel.text}</p>
               <p className="text-3xl py-4">{feel.value}</p>
             </div>
@@ -156,11 +159,14 @@ const WeatherCard = () => {
         <div className="mt-8">
           <p>Daily forecast</p>
           <div className="grid gap-5 grid-cols-3 md:grid-cols-7 mt-5 ">
-            {dailyForecast.map((daily) => (
-              <div className="bg-(--neutral-700) shadow rounded-xl px-6 py-2 text-gray-300 border-gray-700 border ">
+            {dailyForecast.map((daily, index) => (
+              <div
+                key={index}
+                className="bg-(--neutral-700) shadow rounded-xl p-3 text-gray-300 border-gray-700 border "
+              >
                 <p className="text-center">{daily.day}</p>
                 <img src={daily.img} alt={daily.day} />
-                <div className="flex space-x-8">
+                <div className="flex justify-between gap-4">
                   <p>{daily.temp}</p>
                   <p>{daily.temp2}</p>
                 </div>
@@ -174,10 +180,21 @@ const WeatherCard = () => {
         <div className="my-8 md:my-0 border bg-(--neutral-700) border-gray-700  px-3 py-3 rounded-xl">
           <div className="flex items-center justify-between mb-5">
             <h2 className="">Hourly forecast</h2>
-            <button>tuesday</button>
+            <select className="bg-(--neutral-600) text-gray-300 px-3 py-1 pl-2 rounded ">
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+              <option>Sunday</option>
+            </select>
           </div>
-          {hourlyForecast.map((hourly) => (
-            <div className="flex items-center justify-between bg-(--neutral-700) shadow rounded-xl  text-gray-300 border-gray-700 border mb-2 px-2">
+          {hourlyForecast.map((hourly, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between bg-(--neutral-700) shadow rounded-xl  text-gray-300 border-gray-700 border mb-2 px-2"
+            >
               <div className="flex items-center ">
                 <img src={hourly.img} alt="" className="w-15" />
                 <p>{hourly.time}</p>
