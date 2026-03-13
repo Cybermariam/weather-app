@@ -177,7 +177,7 @@ const WeatherCard = () => {
       </div>
       {/* hourlyForecast */}
       <div>
-        <div className="my-8 md:my-0 border bg-(--neutral-700) border-gray-700  px-3 py-3 rounded-xl">
+        <div className="my-8 md:my-0 border bg-(--neutral-700) border-gray-700  px-3 py-6 rounded-xl">
           <div className="flex items-center justify-between mb-5">
             <h2 className="">Hourly forecast</h2>
             <select className="bg-(--neutral-600) text-gray-300 px-3 py-1 pl-2 rounded ">
